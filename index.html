@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function getComputerChoice(){
+            let number = Math.floor(Math.random() * 3);
+            if (number === 0) {
+                return "rock";
+            } else if (number === 1) {
+                return 'paper';
+            } else {
+                return 'scissor';
+            }
+        }
+        function getHumanChoice(){
+            let sign = prompt("Your turn:");
+            if (sign.toLowerCase() === "rock") {
+            //     alert("Wow! I'm a Scorpio too!");
+        }
+        humanScore = 0;
+        computerScore = 0;
+console.log(getComputerChoice())
+console.log(getHumanChoice())
+    </script>
+</body>
+</html>
