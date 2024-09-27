@@ -6,23 +6,45 @@
     <title>Document</title>
 </head>
 <body>
+    
     <script>
-        
+        computerChoice = "none"
         function getComputerChoice(){
             let number = Math.floor(Math.random() * 3);
             if (number === 0) {
-                return "rock";
+                computerChoice = "rock";
             } else if (number === 1) {
-                return 'paper';
+                computerChoice = "paper";
             } else {
-                return 'scissor';
+                computerChoice = "scissors";
             }
         }
         function getHumanChoice(){
-            let sign = prompt("Your turn:");
-            if (sign.toLowerCase() === "rock") {
-            //     alert("Wow! I'm a Scorpio too!");
+            let humanChoice = prompt("Your turn:");
+            humanChoice = humanChoice.toLowerCase()
+            if (humanChoice === computerChoice) {
+                return "it's a tie!";
+            } else if (humanChoice === "rock"){
+                if(computerChoice === "scissors"){
+                    return "You win!"
+                }else if (computerChoice === "paper"){
+                    return "You lose!"
+                }
+            } else if(humanChoice === "paper"){
+                if(computerChoice === "rock"){
+                    return "You win!"
+                }else if (computerChoice === "scissors"){
+                    return "You lose!"
+                }
+            } else{
+                if(computerChoice === "paper"){
+                    return "You win!"
+                }else if (computerChoice === "rock"){
+                    return "You lose!"
+                }
+            }
         }
+
         humanScore = 0;
         computerScore = 0;
 console.log(getComputerChoice())
