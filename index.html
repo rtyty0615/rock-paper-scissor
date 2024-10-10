@@ -6,7 +6,7 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    
+
     <script>
         let humanScore = 0;
         let computerScore = 0;
@@ -26,7 +26,7 @@
             let humanChoice = prompt("Your turn:");
             humanChoice = humanChoice.toLowerCase()
             return humanChoice
-            
+
         }
         function playRound(humanChoice, computerChoice){
             round +=1
@@ -36,7 +36,7 @@
             } else if (humanChoice === "rock"){
                 if(computerChoice === "scissors"){
                     humanScore +=1
-                    console.log("You win! Rock beats Scissors.") 
+                    console.log("You win! Rock beats Scissors.")
                 }else if (computerChoice === "paper"){
                     computerScore +=1
                     console.log("You lose! Paper beats Rock.")
@@ -60,10 +60,10 @@
             }
             console.log(`Player score: ${humanScore} Computer score: ${computerScore}`)
         };
-        
+
         // console.log(getComputerChoice())
         // console.log(getHumanChoice())
-        
+
         function playGame(){
             for (let i = 1; i <= 5; i++) {
                 const computerSelection = getComputerChoice();
