@@ -6,7 +6,7 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-
+    <div id="container">Your turn: </div>
     <script>
         let humanScore = 0;
         let computerScore = 0;
@@ -22,12 +22,13 @@
             }
             return computerChoice
         }
-        function getHumanChoice(){
-            let humanChoice = prompt("Your turn:");
-            humanChoice = humanChoice.toLowerCase()
-            return humanChoice
+        // function getHumanChoice(){
+        //     let humanChoice = prompt("Your turn:");
+        //     humanChoice = humanChoice.toLowerCase()
+        //     return humanChoice
+        // }
 
-        }
+
         function playRound(humanChoice, computerChoice){
             round +=1
             console.log("")
@@ -61,27 +62,48 @@
             console.log(`Player score: ${humanScore} Computer score: ${computerScore}`)
         };
 
-        // console.log(getComputerChoice())
-        // console.log(getHumanChoice())
+        // function playGame(){
+        //     for (let i = 1; i <= 5; i++) {
+        //         const computerSelection = getComputerChoice();
+        //         const humanSelection = getHumanChoice();
+        //         console.log(`Round ${i}:`);
+        //         playRound(humanSelection, computerSelection);
+        //     }
+        //     console.log(`Final Player Score: ${humanScore}, Final Computer Score: ${computerScore}` )
+        //     if (humanScore > computerScore){
+        //         console.log("You win!")
+        //     } else if (computerScore > humanScore){
+        //         console.log("You lose!")
+        //     } else {
+        //         console.log("No one wins!")
+        //     }
 
-        function playGame(){
-            for (let i = 1; i <= 5; i++) {
-                const computerSelection = getComputerChoice();
-                const humanSelection = getHumanChoice();
-                console.log(`Round ${i}:`);
-                playRound(humanSelection, computerSelection);
-            }
-            console.log(`Final Player Score: ${humanScore}, Final Computer Score: ${computerScore}` )
-            if (humanScore > computerScore){
-                console.log("You win!")
-            } else if (computerScore > humanScore){
-                console.log("You lose!")
-            } else {
-                console.log("No one wins!")
-            }
+        // }
+        // playGame()
 
-        }
-        playGame()
+        // DOM
+        const container1 = document.getElementById("container");
+        const buttons = ["Rock", "Paper", "Scissors"];
+        buttons.forEach(i => {
+            const btn = document.createElement("button");
+            btn.textContent = i;
+            btn.id = i.toLowerCase();
+            btn.addEventListener("click", () => {
+                alert(btn.id);
+                let humanChoice = btn.id.toLowerCase();
+                let computerChoice = getComputerChoice();
+                playRound(humanChoice, computerChoice);
+
+                
+            });
+
+            container1.appendChild(btn);
+
+
+        })
+
+
+
 
     </script>
 </body>
